@@ -11,10 +11,13 @@ import android.widget.TextView;
 
 /**
  * Created by alexandremaia on 28/02/2018.
+ *
+ * Code copy from video tutorial (https://www.youtube.com/watch?v=GqcFEvBCnIk)
  */
 
 public class ViewPagerAdapter extends PagerAdapter {
 
+    // Create global variables
     private Context context;
     private LayoutInflater layoutInflater;
     private Integer[] images = { R.drawable.vilacondense01, R.drawable.vilacondense02, R.drawable.vilacondense03, R.drawable.vilacondense04 };

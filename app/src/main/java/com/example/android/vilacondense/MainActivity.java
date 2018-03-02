@@ -6,9 +6,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.widget.CheckBox;
-import android.widget.EditText;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -22,19 +19,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Start ViewPager
         viewPager = (ViewPager) findViewById(R.id.viewPager);
-
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
-
         viewPager.setAdapter(viewPagerAdapter);
 
+        // Start Timer
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new MyTimerTask(), 2000, 5000);
 
     }
 
+    /**
+     *
+     * Code copy from video tutorial (https://www.youtube.com/watch?v=C1yrpsmJApU)
+     *
+     * Don't like
+     */
     public class MyTimerTask extends TimerTask{
-
         @Override
         public void run() {
             MainActivity.this.runOnUiThread(new Runnable() {
@@ -51,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             });
-
         }
     }
 
@@ -66,9 +67,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
     /**
-     * This method is called when the email is clicked.
+     * This method is called when the link is clicked.
      */
     public void openUrl(View view) {
         String url = "http://www.vilacondense.pt";
