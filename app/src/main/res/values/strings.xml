@@ -3,4 +3,5 @@
     <!--Imgs descriptions-->
     <string name="logo_image">Vilacondense Logo</string>
     <string name="slogan_img">Vila do Conde</string>
+    <string name="email">Send Email</string>
 </resources>

@@ -21,7 +21,7 @@ public class ViewPagerAdapter extends PagerAdapter {
     private Context context;
     private LayoutInflater layoutInflater;
     private Integer[] images = { R.drawable.vilacondense01, R.drawable.vilacondense02, R.drawable.vilacondense03, R.drawable.vilacondense04 };
-    private String[] slogans = { "Know Vila do Conde", "Our history", "Our monuments", "Vila do Conde by photos" };
+    private String[] slogans = { "Know Vila do Conde", "Our history", "Our monuments", "Vila do Conde in photos" };
 
     public ViewPagerAdapter(Context context) {
         this.context = context;

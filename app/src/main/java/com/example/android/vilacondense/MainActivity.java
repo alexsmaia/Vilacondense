@@ -12,7 +12,7 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
-    ViewPager viewPager;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,41 @@ public class MainActivity extends AppCompatActivity {
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new MyTimerTask(), 2000, 5000);
 
+    }
+
+    /**
+     * This method is called when the email is clicked.
+     */
+    public void openEmail(View view) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto: info@vilacondense.pt"));
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
+
+    /**
+     * This method is called when the link is clicked.
+     */
+    public void openUrl(View view) {
+        String url = "http://www.vilacondense.pt";
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
+
+    /**
+     * This method is called when the Adress is clicked.
+     */
+    public void openMap(View view) {
+        Uri gmmIntentUri = Uri.parse("geo:41.357367,-8.742202");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        if (mapIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(mapIntent);
+        }
     }
 
     /**
@@ -56,28 +91,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * This method is called when the email is clicked.
-     */
-    public void openEmail(View view) {
-        Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setData(Uri.parse("mailto: info@vilacondense.pt"));
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        }
-    }
 
-    /**
-     * This method is called when the link is clicked.
-     */
-    public void openUrl(View view) {
-        String url = "http://www.vilacondense.pt";
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(url));
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        }
-    }
 
 
 }

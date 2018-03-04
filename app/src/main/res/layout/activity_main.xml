@@ -23,33 +23,68 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:background="#3F96D2"
-        android:orientation="vertical"
-        android:padding="18dp">
+        android:orientation="horizontal"
+        android:padding="8dp" >
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:onClick="openUrl"
-            android:paddingBottom="18dp"
-            android:text="www.vilacondense.pt"
-            android:textColor="#fff"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:layout_weight="1"
+            android:background="#3F96D2"
+            android:orientation="vertical" >
 
-        <TextView
-            android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="openUrl"
+                android:paddingBottom="8dp"
+                android:text="www.vilacondense.pt"
+                android:textColor="#fff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#3F96D2"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="Helvetica"
+                    android:text="Rua 5 de Outubro, 523"
+                    android:textColor="#fff"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:onClick="openMap" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="Helvetica"
+                    android:text="4480-649 Vila do Conde"
+                    android:textColor="#fff"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="Helvetica"
-            android:onClick="openEmail"
-            android:text="info@vilacondense.pt"
-            android:textColor="#fff"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
+            android:contentDescription="@string/email"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/email"
+            android:onClick="openEmail"/>
 
     </LinearLayout>
 
